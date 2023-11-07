@@ -4,7 +4,7 @@ public class CameraController : MonoBehaviour
 {
     public float rotateSpeed = 5f;
     public float minYAngle = 10f;
-    public float maxYAngle = 20f;
+    public float maxYAngle = 80f;
     public float smoothSpeed = 0.125f;
     public float zoomSpeed = 2f;
     public float minZoom = 5f;
@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour
             currentXAngle = Mathf.Clamp(currentXAngle, minYAngle, maxYAngle);
             transform.eulerAngles = new Vector3(currentXAngle, transform.eulerAngles.y, 0);
         }
-        else if (Input.GetMouseButton(0))
+        else if (Input.GetMouseButton(2))
         {
             // Ïåðåìåùåíèå êàìåðû ïðè íàæàòèè ËÊÌ
             Vector3 rightDirection = transform.right;
