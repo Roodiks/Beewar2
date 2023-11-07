@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour
             currentXAngle = Mathf.Clamp(currentXAngle, minYAngle, maxYAngle);
             transform.eulerAngles = new Vector3(currentXAngle, transform.eulerAngles.y, 0);
         }
-        else if (Input.GetMouseButton(2))
+        else if (Input.GetMouseButton(0))
         {
             // Ïåðåìåùåíèå êàìåðû ïðè íàæàòèè ËÊÌ
             Vector3 rightDirection = transform.right;
