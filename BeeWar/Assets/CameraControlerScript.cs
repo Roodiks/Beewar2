@@ -4,7 +4,7 @@ public class CameraController : MonoBehaviour
 {
     public float rotateSpeed = 5f;
     public float minYAngle = 10f;
-    public float maxYAngle = 80f;
+    public float maxYAngle = 20f;
     public float smoothSpeed = 0.125f;
     public float zoomSpeed = 2f;
     public float minZoom = 5f;
@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
-            // Вращение вокруг текущей позиции камеры
+            // Г‚Г°Г Г№ГҐГ­ГЁГҐ ГўГ®ГЄГ°ГіГЈ ГІГҐГЄГіГ№ГҐГ© ГЇГ®Г§ГЁГ¶ГЁГЁ ГЄГ Г¬ГҐГ°Г»
             Vector3 pivot = transform.position;
             transform.RotateAround(pivot, Vector3.up, -horizontalInput * rotateSpeed * Time.deltaTime);
             transform.RotateAround(pivot, transform.right, -verticalInput * rotateSpeed * Time.deltaTime);
@@ -32,7 +32,7 @@ public class CameraController : MonoBehaviour
         }
         else if (Input.GetMouseButton(0))
         {
-            // Перемещение камеры при нажатии ЛКМ
+            // ГЏГҐГ°ГҐГ¬ГҐГ№ГҐГ­ГЁГҐ ГЄГ Г¬ГҐГ°Г» ГЇГ°ГЁ Г­Г Г¦Г ГІГЁГЁ Г‹ГЉГЊ
             Vector3 rightDirection = transform.right;
             rightDirection.y = 0;
 
@@ -42,7 +42,7 @@ public class CameraController : MonoBehaviour
             transform.position -= rightDirection * horizontalInput * panSpeed * Time.deltaTime;
             transform.position -= forwardDirection * verticalInput * panSpeed * Time.deltaTime;
 
-            // Ограничиваем перемещение в пределах ограниченной зоны
+            // ГЋГЈГ°Г Г­ГЁГ·ГЁГўГ ГҐГ¬ ГЇГҐГ°ГҐГ¬ГҐГ№ГҐГ­ГЁГҐ Гў ГЇГ°ГҐГ¤ГҐГ«Г Гµ Г®ГЈГ°Г Г­ГЁГ·ГҐГ­Г­Г®Г© Г§Г®Г­Г»
             Vector3 newPosition = transform.position;
             newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
             newPosition.z = Mathf.Clamp(newPosition.z, minZ, maxZ);
